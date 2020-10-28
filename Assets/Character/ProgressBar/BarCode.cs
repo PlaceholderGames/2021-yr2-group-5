@@ -7,8 +7,7 @@ public class BarCode : MonoBehaviour
 {
     Image timerBar;
     public float maxTime=5f;
-    float timeLeft;
-  
+    public float timeLeft;
 
     // Start is called before the first frame update
     void Start()
@@ -25,7 +24,7 @@ public class BarCode : MonoBehaviour
             timeLeft += Time.deltaTime;
             timerBar.fillAmount = timeLeft / maxTime;
         }
-    else
+        else
         {
             Time.timeScale = 0;
         }
