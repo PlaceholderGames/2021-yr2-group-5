@@ -4,16 +4,22 @@ using UnityEngine;
 
 public class PickUp : MonoBehaviour
 {
+    public GameObject _Text;
+    PlayerManager manager;
+    //private PotionTextScript Pscript;
     private void OnTriggerEnter(Collider collision)
+    {   
+        _Text.SetActive(true);   
+    }
+
+    void OnCollisionStay(Collision collision)
     {
-        PlayerManager manager = collision.GetComponent<PlayerManager>();
-        if (manager)
+        print("stuff");
+        if (Input.GetKeyDown("f"))
         {
-            if (manager.HavePotion == false)
-            { 
-                manager.PickupItem();
-                Destroy(gameObject);
-            }
+            print("fuck");
+            manager.PickupItem();
+            Destroy(gameObject);
         }
     }
 }
