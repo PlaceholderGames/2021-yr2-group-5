@@ -12,11 +12,10 @@ public class PlayerManager : MonoBehaviour
     public Image[] potions;
     public Sprite potionImage;
     public BarCode _Bar;
-    
-    bool UseItem = Input.GetButton("Use");
 
     void Update()
     {
+
         for (int i = 0; i < potions.Length; i++)
         {
             if (i < numOfPotion)
@@ -28,14 +27,11 @@ public class PlayerManager : MonoBehaviour
                 potions[i].enabled = false;
             }
         }
-        UseItem = Input.GetButton("Use");
-        //bool x = Input.GetAxis("Use");
-        if ( (UseItem==true) && (HavePotion == true))
+        
+        if ((Input.GetKeyDown("e")) && (HavePotion == true))
         {
             UsePotion();
         }
-
-
     }
 
     public void PickupItem()
