@@ -16,11 +16,10 @@ public class PickUp : MonoBehaviour
     private void OnTriggerStay(Collider collision)
     {
         PlayerManager manager = collision.GetComponent<PlayerManager>();
-        print("oi");
+        
         if ((manager.HavePotion == false) && (Input.GetKeyDown("f")))
         {
             manager.PickupItem();
-            print("nai");
             Destroy(gameObject);
         }
         
