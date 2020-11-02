@@ -21,6 +21,7 @@ public class PickUp : MonoBehaviour
         {
             manager.PickupItem();
             Destroy(gameObject);
+            _Text.SetActive(false);
         }
         
     }
