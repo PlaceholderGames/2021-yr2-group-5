@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class BarCode : MonoBehaviour
 {
@@ -26,7 +27,9 @@ public class BarCode : MonoBehaviour
         }
         else
         {
-            Time.timeScale = 0;
+            SceneManager.LoadScene(2);
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
         }
     }
 }
