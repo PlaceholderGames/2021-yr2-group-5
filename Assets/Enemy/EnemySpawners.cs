@@ -18,11 +18,11 @@ public class EnemySpawners : MonoBehaviour
     void Update()
     {
         int num = (int)_bar.timeLeft;
-        if ((num % 10) !=0)
+        if ((num % 5) !=0)
         {
             spawning = true;
         }
-        if (num % 10 == 0 && num != 0 && spawning == true)
+        if (num % 5 == 0 && num != 0 && spawning == true)
         {
             SpawnNewDemon();
             spawning = false;
@@ -33,7 +33,7 @@ public class EnemySpawners : MonoBehaviour
     {
         int randomNumber = Mathf.RoundToInt(Random.Range(0f, _SpawnPoints.Length - 1));
         
-        Instantiate(_DemonPrefab, _SpawnPoints[randomNumber].transform.position/*, Quaternion.identity*/);
+        Instantiate(_DemonPrefab, _SpawnPoints[randomNumber].transform.position, Quaternion.identity);
         print(randomNumber);
     }
 }
