@@ -6,8 +6,8 @@ using UnityEngine;
 public class CharacterMovement : MonoBehaviour
 {
     public CharacterController controller;
-
     public float speed = 12f;
+    public Vector3 position;
 
     // Update is called once per frame
     void Update()
@@ -18,8 +18,9 @@ public class CharacterMovement : MonoBehaviour
         Vector3 move = transform.right * x + transform.forward * z;
 
         controller.Move(move * speed * Time.deltaTime);
+        position = transform.position;
+        print(position);
 
-        
     }
 
 
