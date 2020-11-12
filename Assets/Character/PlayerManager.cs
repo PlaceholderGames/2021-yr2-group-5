@@ -13,22 +13,26 @@ public class PlayerManager : MonoBehaviour
     public Sprite potionImage;
     public BarCode _Bar;
 
+    void Start()
+    {
+        potions[0].enabled = false;
+    }
     void Update()
     {
 
-        for (int i = 0; i < potions.Length; i++)
-        {
-            if (i < numOfPotion)
-            {
-                potions[i].enabled = true;
-            }
-            else
-            {
-                potions[i].enabled = false;
-            }
-        }
-        
-        if ((Input.GetKeyDown("e")) && (HavePotion == true))
+        //for (int i = 0; i < potions.Length; i++)
+        //{
+        //    if (i < numOfPotion)
+        //    {
+        //        potions[i].enabled = true;
+        //    }
+        //    else
+        //    {
+        //        potions[i].enabled = false;
+        //    }
+        //}
+
+        if ((Input.GetKey("e")) && (HavePotion == true))
         {
             UsePotion();
         }
@@ -38,6 +42,7 @@ public class PlayerManager : MonoBehaviour
     {
         HavePotion = true;
         numOfPotion++;
+        potions[0].enabled = true;
     }
 
     void UsePotion()
@@ -46,5 +51,6 @@ public class PlayerManager : MonoBehaviour
         else { _Bar.timeLeft = 0; }
         HavePotion = false;
         numOfPotion--;
+        potions[0].enabled = false;
     }
 }
