@@ -17,7 +17,7 @@ public class PickUp : MonoBehaviour
     {
         PlayerManager manager = collision.GetComponent<PlayerManager>();
         
-        if ((manager.HavePotion == false) && (Input.GetKeyDown("f")))
+        if ((manager.HavePotion == false) && (Input.GetKey("f")))
         {
             manager.PickupItem();
             Destroy(gameObject);
