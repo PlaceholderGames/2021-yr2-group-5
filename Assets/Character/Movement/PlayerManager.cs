@@ -12,6 +12,7 @@ public class PlayerManager : MonoBehaviour
     public Image[] potions;
     public Sprite potionImage;
     public BarCode _Bar;
+    public Flashlight _Flash;
 
     void Start()
     {
@@ -19,22 +20,13 @@ public class PlayerManager : MonoBehaviour
     }
     void Update()
     {
-
-        //for (int i = 0; i < potions.Length; i++)
-        //{
-        //    if (i < numOfPotion)
-        //    {
-        //        potions[i].enabled = true;
-        //    }
-        //    else
-        //    {
-        //        potions[i].enabled = false;
-        //    }
-        //}
-
         if ((Input.GetKey("e")) && (HavePotion == true))
         {
             UsePotion();
+        }
+        else if (Input.GetKeyDown("q"))
+        {
+            _Flash.Toggle();
         }
     }
 
