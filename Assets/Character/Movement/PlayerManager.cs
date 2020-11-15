@@ -7,12 +7,12 @@ using UnityEngine.UI;
 public class PlayerManager : MonoBehaviour
 {
     public bool HavePotion = false;
-
     public int numOfPotion=0;
     public Image[] potions;
     public Sprite potionImage;
     public BarCode _Bar;
     public Flashlight _Flash;
+    public PowerOn _Power;
 
     void Start()
     {
