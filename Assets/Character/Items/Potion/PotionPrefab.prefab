@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4723250505920230060}
   - component: {fileID: 5127436862713382235}
   - component: {fileID: 5813737533508336135}
+  - component: {fileID: 9152402597065295359}
   m_Layer: 0
   m_Name: PotionPrefab
   m_TagString: Untagged
@@ -95,7 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f254b68e9bd4f34db349dc7fff00b88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _Text: {fileID: 0}
+  _Text: {fileID: 6420718498665166483, guid: 68fce80b7c381654e91d182903618259, type: 3}
 --- !u!65 &5813737533508336135
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -109,3 +110,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 14.540019, y: 1, z: 20.363483}
   m_Center: {x: 0.64647794, y: 0, z: 0.14905214}
+--- !u!114 &9152402597065295359
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 161458028970892909}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2091c9f2017429043ad4c9b31ecc9641, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ItemPrefab: {fileID: 161458028970892909}
+  HaveItem: 0
+  worldPosition: {x: 0, y: 0, z: 0}
