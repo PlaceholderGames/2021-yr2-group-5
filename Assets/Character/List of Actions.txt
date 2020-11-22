@@ -1,0 +1,6 @@
+List of actions that player can do
+Q - Turn flashlight on and off
+F - Interact
+E - Use
+Z - Drop item at location
+These can and should be changed, these are just for testing etc
