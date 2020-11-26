@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class PlaceObjects : MonoBehaviour
 {
-    public GameObject ItemPrefab;
+    public GameObject[] ItemPrefab;
     public bool HaveItem = true;
-    public Vector3 worldPosition;
-
-
+    Vector3 worldPosition;
+    string RuneName=null;
+    float dis = 4;
+  
     void Update()
     {
         MousePosition();
@@ -28,13 +29,35 @@ public class PlaceObjects : MonoBehaviour
 
     public void PlaceRune()
     {
-        Instantiate(ItemPrefab, worldPosition, Quaternion.identity);
-        HaveItem = false;
+        float spawnDistance = Vector3.Distance(transform.position, worldPosition);
+        if (spawnDistance < dis)
+        {
+            int i = 0;
+            bool j = true;
+
+            while (j == true)
+            {
+                if (RuneName.Contains((i + 1).ToString()))
+                {
+                    j = false;
+                }
+                else i++;
+                if (i > ItemPrefab.Length)
+                {
+                    j = false;
+                    print("out of range ");
+                }
+            }
+            Instantiate(ItemPrefab[i], worldPosition, Quaternion.identity);
+            HaveItem = false;
+        }
+        else { print("out of range"); }
     }
 
-    public void GetRune()
+    public void GetRune(string _name)
     {
         HaveItem = true;
+        RuneName = _name;        
     }
 }
 

@@ -16,7 +16,6 @@ public class PickUp : MonoBehaviour
     {
         if (gameObject.tag == "Consumable")
         {
-            print(gameObject.tag);
             PotionManager manager = collision.GetComponent<PotionManager>();
             if ((manager.HavePotion == false) && (Input.GetKey("f")))
             {
@@ -28,11 +27,10 @@ public class PickUp : MonoBehaviour
 
         else if (gameObject.tag == "Rune")
         {
-            print(gameObject.tag);
             PlaceObjects manager = collision.GetComponent<PlaceObjects>();
             if (manager.HaveItem == false && Input.GetKey("f"))
             {
-                manager.GetRune();
+                manager.GetRune(gameObject.name);
                 Destroy(gameObject);
                 _Text.SetActive(false);
             }
