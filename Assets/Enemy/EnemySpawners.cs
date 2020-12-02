@@ -34,6 +34,5 @@ public class EnemySpawners : MonoBehaviour
         int randomNumber = Mathf.RoundToInt(Random.Range(0f, _SpawnPoints.Length - 1));
         
         Instantiate(_DemonPrefab, _SpawnPoints[randomNumber].transform.position, Quaternion.identity);
-        print(randomNumber);
     }
 }

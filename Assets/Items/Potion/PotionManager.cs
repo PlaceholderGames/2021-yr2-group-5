@@ -20,7 +20,6 @@ public class PotionManager : MonoBehaviour
 
     public void UsePotion()
     {
-        print("use");
         if (_Bar.timeLeft >= 100)
         {
             _Bar.timeLeft -= 100;
@@ -37,7 +36,6 @@ public class PotionManager : MonoBehaviour
 
     public void PickupItem()
     {
-        print("picking up");
         HavePotion = true;
         numOfPotion++;
         potions[0].enabled = true;
