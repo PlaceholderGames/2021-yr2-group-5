@@ -7,8 +7,8 @@ using UnityEngine.SceneManagement;
 public class BarCode : MonoBehaviour
 {
     Image timerBar;
-    public float maxTime=5f;
-    public float timeLeft;
+    float maxTime=50f;
+    float timeLeft;
 
     // Start is called before the first frame update
     void Start()
@@ -31,5 +31,15 @@ public class BarCode : MonoBehaviour
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
         }
+    }
+
+    public float getTimeLeft()
+    {
+        return timeLeft;
+    }
+
+    public void setTimeLeft(float num)
+    {
+        timeLeft = num;
     }
 }
