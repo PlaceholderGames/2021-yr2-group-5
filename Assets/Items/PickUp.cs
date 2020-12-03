@@ -14,25 +14,28 @@ public class PickUp : MonoBehaviour
 
     private void OnTriggerStay(Collider collision)
     {
-        if (gameObject.tag == "Consumable")
+        if (collision.tag != "player")
         {
-            PotionManager manager = collision.GetComponent<PotionManager>();
-            if ((manager.HavePotion == false) && (Input.GetKey("f")))
+            if (gameObject.tag == "Consumable")
             {
-                manager.PickupItem();
-                Destroy(gameObject);
-                _Text.SetActive(false);
+                PotionManager manager = collision.GetComponent<PotionManager>();
+                if ((manager.getHavePotion() == false) && (Input.GetKey("f")))
+                {
+                    manager.PickupItem();
+                    Destroy(gameObject);
+                    _Text.SetActive(false);
+                }
             }
-        }
 
-        else if (gameObject.tag == "Rune")
-        {
-            PlaceObjects manager = collision.GetComponent<PlaceObjects>();
-            if (manager.HaveItem == false && Input.GetKey("f"))
+            else if (gameObject.tag == "Rune")
             {
-                manager.GetRune(gameObject.name);
-                Destroy(gameObject);
-                _Text.SetActive(false);
+                PlaceObjects manager = collision.GetComponent<PlaceObjects>();
+                if (manager.getHaveItem() == false && Input.GetKey("f"))
+                {
+                    manager.PickRune(gameObject.name);
+                    Destroy(gameObject);
+                    _Text.SetActive(false);
+                }
             }
         }
     }

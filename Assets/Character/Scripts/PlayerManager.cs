@@ -12,13 +12,12 @@ public class PlayerManager : MonoBehaviour
 
     void Update()
     {
-        if ((Input.GetKey("e")) && (_Potion.HavePotion == true))
+        if ((Input.GetKey("e")) && (_Potion.getHavePotion() == true))
         {
-            print("call");
             _Potion.UsePotion();
         }
 
-        else if ((Input.GetKey("z")) && (_Obj.HaveItem == true))
+        else if ((Input.GetKey("z")) && (_Obj.getHaveItem() == true))
         {
             _Obj.PlaceRune();
         }
