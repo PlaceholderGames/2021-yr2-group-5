@@ -27,7 +27,7 @@ public class BarCode : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(3);
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
         }
