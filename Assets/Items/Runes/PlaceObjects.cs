@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlaceObjects : MonoBehaviour
 {
     public GameObject[] ItemPrefab;
-    public bool HaveItem = true;
+    bool HaveItem = false;
     Vector3 worldPosition;
     string RuneName=null;
     float dis = 4;
@@ -25,6 +25,8 @@ public class PlaceObjects : MonoBehaviour
         {
             worldPosition = ray.GetPoint(distance);
         }
+        print(worldPosition);         
+            
     }
 
     public void PlaceRune()
@@ -45,7 +47,7 @@ public class PlaceObjects : MonoBehaviour
                 if (i > ItemPrefab.Length)
                 {
                     j = false;
-                    print("out of range ");
+                    print("out of array range ");
                 }
             }
             Instantiate(ItemPrefab[i], worldPosition, Quaternion.identity);
@@ -54,10 +56,15 @@ public class PlaceObjects : MonoBehaviour
         else { print("out of range"); }
     }
 
-    public void GetRune(string _name)
+    public void PickRune(string _name)
     {
         HaveItem = true;
         RuneName = _name;        
+    }
+
+    public bool getHaveItem()
+    {
+        return HaveItem;
     }
 }
 
