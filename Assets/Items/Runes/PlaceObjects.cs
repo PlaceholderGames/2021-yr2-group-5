@@ -25,7 +25,7 @@ public class PlaceObjects : MonoBehaviour
         {
             worldPosition = ray.GetPoint(distance);
         }
-        print(worldPosition);
+        //print(worldPosition);
             
     }
 

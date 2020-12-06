@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+<<<<<<< HEAD
+guid: 1870014d25f45cd4684f44ca8b90e1cc
+=======
+<<<<<<< HEAD:Assets/Enemy/EnemyManager.prefab.meta
+guid: ca66b139f260600449233a85cf471697
+=======
+guid: 1870014d25f45cd4684f44ca8b90e1cc
+>>>>>>> 43c9abaf903cb6bc75c97f1dffd57ad40ea9c403:Assets/MapInteractions/ItemLocations/ItemLocations.prefab.meta
+>>>>>>> 43c9abaf903cb6bc75c97f1dffd57ad40ea9c403
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

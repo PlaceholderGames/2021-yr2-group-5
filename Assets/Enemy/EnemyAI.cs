@@ -37,7 +37,6 @@ public class EnemyAI : MonoBehaviour
         {
             demon.SetDestination(transform.position);
             //play scary noise code goes here 
-            Debug.Log("haunting");
             bC.timeLeft += Time.deltaTime;
         }
     }
