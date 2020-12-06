@@ -7,7 +7,7 @@ public class EnemyAI : MonoBehaviour
 {
     private NavMeshAgent demon;
     CharacterMovement _char;
-    public float distanceStop= 5.0f;
+    public float distanceStop= 25.0f;
     BarCode bC;
 
     void Start()

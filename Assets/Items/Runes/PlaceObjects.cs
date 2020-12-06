@@ -5,17 +5,13 @@ using UnityEngine;
 public class PlaceObjects : MonoBehaviour
 {
     public GameObject[] ItemPrefab;
-    bool HaveItem = false;
+    public bool HaveItem = false;
     Vector3 worldPosition;
     string RuneName=null;
     float dis = 4;
   
-    void Update()
-    {
-        MousePosition();
-    }
 
-    void MousePosition()
+    void MousePosition() 
     {
         Plane plane = new Plane(Vector3.up, 0);
 
@@ -31,6 +27,8 @@ public class PlaceObjects : MonoBehaviour
 
     public void PlaceRune()
     {
+        MousePosition();
+        
         float spawnDistance = Vector3.Distance(transform.position, worldPosition);
         if (spawnDistance < dis)
         {
@@ -51,9 +49,10 @@ public class PlaceObjects : MonoBehaviour
                 }
             }
             Instantiate(ItemPrefab[i], worldPosition, Quaternion.identity);
+            print("Object Spawned");
             HaveItem = false;
         }
-        else { print("out of range"); }
+        else { print("Couldnt spawn, you are pointing too far away"); }
     }
 
     public void PickRune(string _name)
