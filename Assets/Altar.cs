@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Altar : MonoBehaviour
 {
@@ -17,12 +18,14 @@ public class Altar : MonoBehaviour
         if(runes >= 3)
         {
             Debug.Log("you win");
+
         }
     }
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Rune")
         {
+            SceneManager.LoadScene(4);
             runes++;
         }
     }

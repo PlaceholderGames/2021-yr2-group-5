@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Cabin All in One.unity
     guid: 146a09f29fee102479c8b36fd9042e4d
+  - enabled: 1
+    path: Assets/Scenes/Win Screen.unity
+    guid: 253a53fcf4b770c49bb9646285fe3c8c
   m_configObjects: {}

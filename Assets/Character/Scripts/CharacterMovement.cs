@@ -10,15 +10,29 @@ public class CharacterMovement : MonoBehaviour
     public float walkSpeed = 10f;
     public float sprintSpeed = 15f;
     public float crouchSpeed = 5f;
-    public Vector3 position; 
+    public Vector3 position;
+    AudioSource audio;
 
+    void Start()
+    {
+        audio = GetComponent<AudioSource>();
+    }
     // Update is called once per frame
     void Update()
     {
         float currentSpeed;  
         float x = Input.GetAxis("Horizontal"); 
         float z = Input.GetAxis("Vertical");
-
+        
+        if ((z != 0 || x != 0))
+        {
+            if (!audio.isPlaying)
+            {
+                audio.Play();
+            }
+        }
+        else 
+        { audio.Stop(); }
         if(Input.GetKey(KeyCode.LeftShift) && z > 0)
         {
             if(controller.height < 3.8)
