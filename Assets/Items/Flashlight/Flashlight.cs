@@ -5,8 +5,14 @@ using UnityEngine;
 public class Flashlight : MonoBehaviour
 {
     public Light flashlight;
-    public bool toggle = false;
-        
+    public bool toggle;
+    
+    void Start ()
+    {
+        flashlight.enabled = false;
+        toggle = false;
+    }
+
     public void Toggle()
     {
         if (toggle == false)
