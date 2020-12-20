@@ -37,6 +37,17 @@ public class PickUp : MonoBehaviour
                     _Text.SetActive(false);
                 }
             }
+
+            else if (gameObject.tag == "Flashlight")
+            {
+                getTorch manager = collision.GetComponent<getTorch>();
+                if (manager.getHaveTorch() == false && Input.GetKey("f"))
+                {
+                    manager.pickUpTorch();
+                    Destroy(gameObject);
+                    _Text.SetActive(false);
+                }
+            }
         }
     }
 
