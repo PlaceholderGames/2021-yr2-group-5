@@ -18,7 +18,7 @@ public class EnemySpawners : MonoBehaviour
     void Update()
     {
         int num = (int)_bar.getTimeLeft();
-        if ((num % 5) !=0)
+        if ((num % 5) != 0)
         {
             spawning = true;
         }
@@ -27,7 +27,7 @@ public class EnemySpawners : MonoBehaviour
             SpawnNewDemon();
             spawning = false;
         }
-        
+
     }
 
     void SpawnNewDemon()
