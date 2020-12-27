@@ -22,19 +22,16 @@ public class EnemyAI : MonoBehaviour
     void Update()
     {
         float distance = Vector3.Distance(transform.position, _char.position);
-        //print(distance);
         if (distance > distanceStop)
         {
 
             if (reachedChar == true && distance > distanceDestroy)
             {
                 print(distance);
-                print("fuck");
                 Destroy(gameObject);
             }
             else
             {
-                print("else");
                 Vector3 dirToPlayer = transform.position - _char.position;
 
                 Vector3 newPos = transform.position - dirToPlayer;
@@ -49,7 +46,6 @@ public class EnemyAI : MonoBehaviour
         }
         else if(distance < distanceStop)
         {
-            print("reached");
             demon.SetDestination(transform.position);
             //play scary noise code goes here 
             bC.timeLeft += Time.deltaTime;
