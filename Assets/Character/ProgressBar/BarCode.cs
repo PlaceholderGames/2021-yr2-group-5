@@ -38,6 +38,11 @@ public class BarCode : MonoBehaviour
         return timeLeft;
     }
 
+    public float getMaxTime()
+    {
+        return maxTime;
+    }
+
     public void setTimeLeft(float num)
     {
         timeLeft = num;
