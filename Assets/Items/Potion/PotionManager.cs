@@ -9,8 +9,10 @@ public class PotionManager : MonoBehaviour
     public BarCode _Bar;
     bool HavePotion = false;
     int numOfPotion = 0;
+    int potionsUsed = 0;
     public Image[] potions;
     public Sprite potionImage;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -31,6 +33,7 @@ public class PotionManager : MonoBehaviour
 
         HavePotion = false;
         numOfPotion--;
+        potionsUsed++;
         potions[0].enabled = false;
     }
 
@@ -39,6 +42,11 @@ public class PotionManager : MonoBehaviour
         HavePotion = true;
         numOfPotion++;
         potions[0].enabled = true;
+    }
+
+    public int getPotionsUsed()
+    {
+        return potionsUsed;
     }
 
     public bool getHavePotion()
