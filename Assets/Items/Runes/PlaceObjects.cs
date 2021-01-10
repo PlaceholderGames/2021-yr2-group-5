@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class PlaceObjects : MonoBehaviour
 {
+    public GameObject _text;
     public GameObject[] ItemPrefab;
     public bool HaveItem = false;
     Vector3 worldPosition;
     string RuneName=null;
     float dis = 4;
+    bool initial = true;
   
 
     void MousePosition() 
@@ -28,7 +30,12 @@ public class PlaceObjects : MonoBehaviour
     public void PlaceRune()
     {
         MousePosition();
-        
+        if (initial)
+        {
+            _text.SetActive(false);
+            initial = false;
+        }
+    
         float spawnDistance = Vector3.Distance(transform.position, worldPosition);
         if (spawnDistance < dis)
         {
@@ -57,6 +64,10 @@ public class PlaceObjects : MonoBehaviour
 
     public void PickRune(string _name)
     {
+        if (initial)
+        {
+            _text.SetActive(true);
+        }
         HaveItem = true;
         RuneName = _name;        
     }

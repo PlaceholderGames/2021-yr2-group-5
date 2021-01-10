@@ -7,7 +7,6 @@ public class getTorch : MonoBehaviour
     bool HaveTorch;
 
     public Flashlight _Light;
-
     public GameObject _Flashlight;
     // Start is called before the first frame update
     void Start()

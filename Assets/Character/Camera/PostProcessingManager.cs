@@ -29,13 +29,13 @@ public class PostProcessingManager : MonoBehaviour
     void Update()
     {
 
-        if (_Bar.getTimeLeft() > _Bar.getMaxTime() / 3 && _Vignette.intensity.value<0.45)
+        if (_Bar.getTimeLeft() > _Bar.getMaxTime() / 3 && _Vignette.intensity.value<0.3)
         {
-            _Vignette.intensity.value += 0.05f;//Mathf.Lerp(_Vignette.intensity.value, 1, (_Bar.getTimeLeft() /*/ (_Bar.getMaxTime()*2*/));
+            _Vignette.intensity.value += 0.005f;//Mathf.Lerp(_Vignette.intensity.value, 1, (_Bar.getTimeLeft() /*/ (_Bar.getMaxTime()*2*/));
         }
-        else if (_Bar.getTimeLeft() > (_Bar.getMaxTime() * 0.75f) && _Vignette.intensity.value < 0.6)
+        else if (_Bar.getTimeLeft() > (_Bar.getMaxTime() * 0.75f) && _Vignette.intensity.value < 0.35)
         {
-            _Vignette.intensity.value += 0.05f;
+            _Vignette.intensity.value += 0.005f;
         }
         _Chrom.intensity.value = (0.33f * _potion.getPotionsUsed());
         _Lens.intensity.value = (16.66f * _potion.getPotionsUsed());
