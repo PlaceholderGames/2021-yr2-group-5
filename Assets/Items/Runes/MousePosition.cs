@@ -8,13 +8,23 @@ public class MousePosition : MonoBehaviour
 
     void Update()
     {
-        Plane plane = new Plane(Vector3.up, 0);
+        ////youtube
+        //Plane plane = new Plane(Vector3.up, 0);
 
-        float distance;
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (plane.Raycast(ray, out distance))
-        {
-            worldPosition = ray.GetPoint(distance);
-        }
+        //float distance;
+        //Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        //if (plane.Raycast(ray, out distance))
+        //{
+        //    worldPosition = ray.GetPoint(distance);
+        //}
+
+        ////khalid 
+        //RaycastHit hit;
+        //Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        //if (Physics.Raycast(ray, out hit))
+        //{
+        //    // if (hit.transform.gameObject.tag == "Ground")
+        //    worldPosition = hit.point;
+        //}
     }
 }

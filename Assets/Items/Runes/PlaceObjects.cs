@@ -9,22 +9,21 @@ public class PlaceObjects : MonoBehaviour
     public bool HaveItem = false;
     Vector3 worldPosition;
     string RuneName=null;
-    float dis = 4;
+    float dis = 6;
     bool initial = true;
   
 
     void MousePosition() 
     {
-        Plane plane = new Plane(Vector3.up, 0);
-
-        float distance;
+        RaycastHit hit;
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (plane.Raycast(ray, out distance))
+        if (Physics.Raycast(ray, out hit))
         {
-            worldPosition = ray.GetPoint(distance);
+            // if (hit.transform.gameObject.tag == "Ground")
+            worldPosition = hit.point;
         }
         //print(worldPosition);
-            
+
     }
 
     public void PlaceRune()
@@ -35,7 +34,7 @@ public class PlaceObjects : MonoBehaviour
             _text.SetActive(false);
             initial = false;
         }
-    
+        //worldPosition.y += ItemPrefab[i].GetComponent<MeshFilter>().sharedMesh.bounds.extents.y * 2;
         float spawnDistance = Vector3.Distance(transform.position, worldPosition);
         if (spawnDistance < dis)
         {
@@ -55,6 +54,7 @@ public class PlaceObjects : MonoBehaviour
                     print("out of array range ");
                 }
             }
+            worldPosition.y += ItemPrefab[i].GetComponent<MeshFilter>().sharedMesh.bounds.extents.y;
             Instantiate(ItemPrefab[i], worldPosition, Quaternion.identity);
             print("Object Spawned");
             HaveItem = false;
