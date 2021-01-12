@@ -22,11 +22,9 @@ public class TrapDoor : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player") { anim.SetBool("TDOpen", true); }
-        Debug.Log("Enters");
     }
     private void OnTriggerExit(Collider other)
     {
         if (other.tag == "Player") { anim.SetBool("TDOpen", false); }
-        Debug.Log("Exits");
     }
 }

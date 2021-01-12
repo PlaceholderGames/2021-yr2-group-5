@@ -4,21 +4,22 @@ using UnityEngine;
 
 public class ItemCheck : MonoBehaviour
 {
-    bool CorrectItem = false;
+    bool CorrectItem;
     int LocationNumber;
     public SenteceCheck _Sen;
 
     void Start()
     {
+        CorrectItem = false;
         if (gameObject.name.Contains((1).ToString()))
         {
             LocationNumber = 1;
         }
-        if (gameObject.name.Contains((2).ToString()))
+        else if (gameObject.name.Contains((2).ToString()))
         {
             LocationNumber = 2;
         }
-        if (gameObject.name.Contains((3).ToString()))
+        else if (gameObject.name.Contains((3).ToString()))
         {
             LocationNumber = 3;
         }
@@ -27,10 +28,8 @@ public class ItemCheck : MonoBehaviour
         //    LocationNumber = 4;
         //}
     }
-
-    private void OnTriggerStay(Collider collision)
+    private void OnTriggerEnter(Collider collision)
     {
-        print(collision.tag);
         if (collision.tag == "Rune")
         {
             if (collision.name.Contains(LocationNumber.ToString()))
@@ -43,12 +42,17 @@ public class ItemCheck : MonoBehaviour
             {
                 CorrectItem = false;
             }
-            print(CorrectItem);
         }
+    }
+
+    private void OnTriggerExit(Collider collision)
+    {
+        CorrectItem = false;
     }
 
     public bool getItem()
     {
+        print(CorrectItem);
         return CorrectItem;
     }
 

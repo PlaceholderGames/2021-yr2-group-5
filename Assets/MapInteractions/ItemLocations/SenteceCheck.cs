@@ -10,19 +10,20 @@ public class SenteceCheck : MonoBehaviour
     public void Check()
     {
         int i = 0;
-        int count = 0;
+        bool check = true;
         while (i < _loc.Length)
         {
-            if (_loc[i].getItem() == true)
+            if (_loc[i].getItem() == false)
             {
-                count++;
+                //print(_loc[i].getItem());
+                check = false;
             }
-            else { i = _loc.Length; }
-            if (count == _loc.Length - 1)
-            {
-                print("Winner Winner Chicken Dinner");
-                SceneManager.LoadScene(2);
-            }
+            i++;
+        }
+        if (check)
+        {
+            print("Winner Winner Chicken Dinner");
+            SceneManager.LoadScene(4);
         }
     }
 }

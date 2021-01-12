@@ -27,7 +27,6 @@ public class PowerOn : MonoBehaviour
             foreach(Light lamp in lights)
             {
                 lamp.enabled = true;
-                print("Lamp Enabled");
             }
             powerOn = true;
         }

@@ -29,19 +29,15 @@ public class MusicShuffle : MonoBehaviour
             switch (num)
             {
                 case 1:
-                    print(num);
                     Music1.Play();
                     break;
                 case 2:
-                    print(num);
                     Music2.Play();
                     break;
                 case 3:
-                    print(num);
                     Music3.Play();
                     break;
                 case 4:
-                    print(num);
                     break;
             }
                     
