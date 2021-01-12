@@ -7,8 +7,8 @@ using UnityEngine.SceneManagement;
 public class BarCode : MonoBehaviour
 {
     Image timerBar;
-    float maxTime=50f;
-    public float timeLeft; //J set this as public so the enemy AI could access it.
+    public float maxTime=1000f;
+    public float timeLeft; // set this as public so the enemy AI could access it.
 
     // Start is called before the first frame update
     void Start()

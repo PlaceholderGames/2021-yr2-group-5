@@ -14,7 +14,7 @@ public class PickUp : MonoBehaviour
 
     private void OnTriggerStay(Collider collision)
     {
-        if (collision.tag != "player")
+        if (collision.tag == "Player")
         {
             if (gameObject.tag == "Consumable")
             {
