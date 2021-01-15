@@ -48,6 +48,17 @@ public class PickUp : MonoBehaviour
                     _Text.SetActive(false);
                 }
             }
+
+            else if (gameObject.tag == "Notes")
+            {
+                if (Input.GetKey("f"))
+                {
+                    noteManager manager = collision.GetComponent<noteManager>();
+                    manager.openImage();
+                    Destroy(gameObject);
+                    _Text.SetActive(false);
+                }
+            }
         }
     }
 
