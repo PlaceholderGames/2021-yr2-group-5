@@ -16,45 +16,45 @@ public class PickUp : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            if (gameObject.tag == "Consumable")
+            if (Input.GetKey("f"))
             {
-                PotionManager manager = collision.GetComponent<PotionManager>();
-                if ((manager.getHavePotion() == false) && (Input.GetKey("f")))
+                if (gameObject.tag == "Consumable")
                 {
-                    manager.PickupItem();
-                    Destroy(gameObject);
-                    _Text.SetActive(false);
+                    PotionManager manager = collision.GetComponent<PotionManager>();
+                    if ((manager.getHavePotion() == false))
+                    {
+                        manager.PickupItem();
+                        Destroy(gameObject);
+                        _Text.SetActive(false);
+                    }
                 }
-            }
 
-            else if (gameObject.tag == "Rune")
-            {
-                PlaceObjects manager = collision.GetComponent<PlaceObjects>();
-                if (manager.getHaveItem() == false && Input.GetKey("f"))
+                else if (gameObject.tag == "Rune")
                 {
-                    manager.PickRune(gameObject.name);
-                    Destroy(gameObject);
-                    _Text.SetActive(false);
+                    PlaceObjects manager = collision.GetComponent<PlaceObjects>();
+                    if (manager.getHaveItem() == false)
+                    {
+                        manager.PickRune(gameObject.name);
+                        Destroy(gameObject);
+                        _Text.SetActive(false);
+                    }
                 }
-            }
 
-            else if (gameObject.tag == "Flashlight")
-            {
-                getTorch manager = collision.GetComponent<getTorch>();
-                if (manager.getHaveTorch() == false && Input.GetKey("f"))
+                else if (gameObject.tag == "Flashlight")
                 {
-                    manager.pickUpTorch();
-                    Destroy(gameObject);
-                    _Text.SetActive(false);
+                    getTorch manager = collision.GetComponent<getTorch>();
+                    if (manager.getHaveTorch() == false)
+                    {
+                        manager.pickUpTorch();
+                        Destroy(gameObject);
+                        _Text.SetActive(false);
+                    }
                 }
-            }
 
-            else if (gameObject.tag == "Notes")
-            {
-                if (Input.GetKey("f"))
+                else if (gameObject.tag == "Notes")
                 {
                     noteManager manager = collision.GetComponent<noteManager>();
-                    manager.openImage();
+                    manager.pickUpNote();
                     Destroy(gameObject);
                     _Text.SetActive(false);
                 }

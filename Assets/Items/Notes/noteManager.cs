@@ -7,7 +7,7 @@ public class noteManager : MonoBehaviour
 {
     public GameObject _noteImage;
     public MouseLook _look;
-   // var _moveScript;
+    bool haveNote = false;
 
     // Start is called before the first frame update
     void Start()
@@ -34,5 +34,16 @@ public class noteManager : MonoBehaviour
         _noteImage.SetActive(false);
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+    }
+
+    public void pickUpNote()
+    {
+        haveNote = true;
+        openImage();
+    }
+
+    public bool getHaveNote()
+    {
+        return haveNote;
     }
 }

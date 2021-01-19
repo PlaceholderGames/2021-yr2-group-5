@@ -6,9 +6,21 @@ using UnityEngine.UI;
 
 public class PlayerManager : MonoBehaviour
 {
-    public PotionManager _Potion;
-    public PlaceObjects _Obj;
+    //public PotionManager _Potion;
+    //public PlaceObjects _Obj;
     public Flashlight _Flash;
+    //public noteManager _Note;
+    noteManager _Note;
+    PlaceObjects _Obj;
+    PotionManager _Potion;
+
+    void Start()
+    {
+        _Note = this.GetComponent<noteManager>();
+        _Obj = this.GetComponent<PlaceObjects>();
+        _Potion = this.GetComponent<PotionManager>();
+
+    }
 
     void Update()
     {
@@ -27,6 +39,10 @@ public class PlayerManager : MonoBehaviour
             _Flash.Toggle();
         }
 
+        else if ((Input.GetKeyDown("x"))&&(_Note.getHaveNote()))
+        {
+            _Note.openImage();
+        }
 
     }
 }
