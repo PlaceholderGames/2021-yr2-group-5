@@ -8,6 +8,7 @@ TagManager:
   - Consumable
   - Flashlight
   - Ground
+  - Notes
   layers:
   - Default
   - TransparentFX
