@@ -5,12 +5,12 @@ using UnityEngine;
 public class PlaceObjects : MonoBehaviour
 {
     public GameObject _text;
-    public GameObject[] ItemPrefab;
     public bool HaveItem = false;
     Vector3 worldPosition;
     string RuneName=null;
-    float dis = 6;
+    float dis = 10;
     bool initial = true;
+    GameObject[] ItemPrefab;
   
 
     void MousePosition() 

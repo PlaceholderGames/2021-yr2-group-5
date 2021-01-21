@@ -18,14 +18,13 @@ public class Altar : MonoBehaviour
         if(runes >= 3)
         {
             Debug.Log("you win");
-
+            SceneManager.LoadScene(4);
         }
     }
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Rune")
         {
-            SceneManager.LoadScene(4);
             runes++;
         }
     }
