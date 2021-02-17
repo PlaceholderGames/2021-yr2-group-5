@@ -5,10 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Rune
-  - Consumable
-  - Flashlight
-  - Ground
-  - Notes
+  - New tag
+  - Altar
+  - Drugs
   layers:
   - Default
   - TransparentFX
@@ -18,8 +17,8 @@ TagManager:
   - UI
   - 
   - 
-  - Player
-  - Post-Processing
+  - volume
+  - 
   - 
   - 
   - 
