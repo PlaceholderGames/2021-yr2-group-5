@@ -24,7 +24,7 @@ public class DropObject : MonoBehaviour
     {
         if(Input.GetButtonDown("PickUp/Drop"))
         {
-            Physics.Raycast(cameraTransform.position, cameraTransform.forward, out hitInfo, 5.0f);
+            Physics.Raycast(cameraTransform.position, cameraTransform.forward, out hitInfo, 7.5f);
             if (heldObject == null)
             {
                 

@@ -6,7 +6,7 @@ using UnityEngine.Rendering.Universal;
 
 public class sanityscript : MonoBehaviour
 {
-    float sanity = 100;
+    public float sanity = 100;
     public Volume v;
     public Vignette vG;
     public ChromaticAberration cA;
@@ -24,10 +24,21 @@ public class sanityscript : MonoBehaviour
         sanity -= Time.deltaTime/2;
         vG.intensity.value = 1 - (sanity / 100);
         cA.intensity.value -= Time.deltaTime / 200;
+        if(sanity < 0)
+        {
+            Die();
+        }
     }
     public void Medicate()
     {
         sanity = 100;
         cA.intensity.value += 0.2f;
+    }
+    void Die()
+    {
+        Debug.Log("player has died");
+        transform.position = new Vector3(0, 7.5f, 0);
+        sanity = 100;
+        cA.intensity.value = 0;
     }
 }

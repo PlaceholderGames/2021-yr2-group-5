@@ -50,11 +50,15 @@ public class DemonAI : MonoBehaviour
                     Debug.Log("can see the player");
                     dirToTarget = transform.position - _char.transform.position;
                     aS.clip = audioClips[1];
+                    if(hit.distance <= 10f)
+                    {
+                        _char.GetComponent<sanityscript>().sanity -= Time.deltaTime / 2;
+                    }
                 }
                 else
                 {
                     Debug.Log("cant see the player");
-                    timeUnseen += Time.deltaTime;
+                    timeUnseen += Time.deltaTime *10 ;
                     aS.clip = audioClips[0];
                     if (timeUnseen >= 10)
                     {
